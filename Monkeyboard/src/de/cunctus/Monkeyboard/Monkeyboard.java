@@ -44,12 +44,14 @@ public class Monkeyboard implements IMonkeyboard {
 
 	private Monkeyboard(String device, String library)
 			throws DeviceNotFoundException, InvalidPropertiesException {
+		this.device = device;
+		this.library = library;
 
-		monkeyBoard = (INativeMonkeyboard) Native.loadLibrary(library,
+		monkeyBoard = (INativeMonkeyboard) Native.loadLibrary(this.library,
 				INativeMonkeyboard.class);
 
-		if (!this.OpenRadioPort(device, true))
-			throw new DeviceNotFoundException("Could not open " + device);
+		if (!this.OpenRadioPort(this.device, true))
+			throw new DeviceNotFoundException("Could not open'" + this.device+ "'");
 	}
 
 	/**
@@ -532,7 +534,7 @@ public class Monkeyboard implements IMonkeyboard {
 	 */
 	@Override
 	public boolean OpenRadioPort(String port, boolean usehardmute) {
-		return monkeyBoard.OpenRadioPort(this.device, usehardmute);
+		return monkeyBoard.OpenRadioPort(port, usehardmute);
 	}
 
 	/*
