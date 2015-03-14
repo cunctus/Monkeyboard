@@ -5,5 +5,5 @@ You need a running native library installed, check out http://www.monkeyboard.or
 
 You can control the Monkeyboard DAB/DAB+ & FM receiver with this Java Wrapper. It is in very early development stage, so please report any errors etc. to help me improving the Wrapper. Thx!
 
-This software is open-source and free for non-commercial use. You are allowed to copy and modify it, but you must leave (or extend) the original file header. Thx!
+This software is open-source and released under the GNU GPL v3 (see LICENSE file).
 
